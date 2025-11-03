@@ -73,7 +73,15 @@ const p5 = new Person()
 // potremmo sfruttare il fatto che le FUNZIONI (anche quelle costruttore) possono
 // accettare dei PARAMETRI
 
-const NamedPerson = function (_firstName) {
+const NamedPerson = function (
+  _firstName,
+  _lastName,
+  _age,
+  _skills,
+  _region,
+  _phone,
+  _email
+) {
   // sto creando una FABBRICA di OGGETTI "person"
   // riempio questo "timbro" con tutte le caratteristiche che voglio infondere
   // agli oggetti di tipo Person
@@ -81,19 +89,35 @@ const NamedPerson = function (_firstName) {
   // descrivo tutte le proprietà e i metodi che finiranno poi nei mei oggetti
   // e li inizializzo con valori "vuoti"
   this.firstName = _firstName
-  this.lastName = ''
-  this.age = 0
-  this.skills = []
-  this.region = ''
-  this.phone = ''
-  this.email = ''
+  this.lastName = _lastName
+  this.age = _age
+  this.skills = _skills
+  this.region = _region
+  this.phone = _phone
+  this.email = _email
   this.showName = function () {
     return 'Io mi chiamo ' + this.firstName + ' ' + this.lastName
   }
 }
 
-const np1 = new NamedPerson('Claudio')
+const np1 = new NamedPerson(
+  'Claudio',
+  'Baglioni',
+  97,
+  ['singing', 'hosting'],
+  'Lazio',
+  '31231322',
+  'claudio@baglioni.com'
+)
 console.log('NP1', np1)
 
-const np2 = new NamedPerson('Eros')
+const np2 = new NamedPerson(
+  'Eros',
+  'Ramazzotti',
+  60,
+  ['singing'],
+  'Lazio',
+  '23123123',
+  'eros@ramazzotti.com'
+)
 console.log('NP2', np2)
