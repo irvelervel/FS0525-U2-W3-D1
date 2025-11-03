@@ -88,3 +88,35 @@ const giangiorgio = new Developer('Giangiorgio', 20, 'azure', 'male', 175, 2, [
   'JS',
   'Java',
 ])
+
+console.log(giangiorgio)
+
+// estendiamo una classe che a sua volta ha una superclasse
+class GameDeveloper extends Developer {
+  constructor(
+    _name,
+    _age,
+    _eyeColor,
+    _gender,
+    _height,
+    _YoE,
+    _languages,
+    _engines
+  ) {
+    super(_name, _age, _eyeColor, _gender, _height, _YoE, _languages)
+    this.engines = _engines
+  }
+}
+
+const raphael = new GameDeveloper(
+  'Raphael',
+  25,
+  'blue',
+  'male',
+  178,
+  5,
+  ['C'],
+  ['Unity']
+)
+
+console.log('RAPHAEL', raphael)
